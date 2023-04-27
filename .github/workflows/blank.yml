@@ -2,17 +2,17 @@ name: Build spilo image
 on:
 
   workflow_dispatch:
-  inputs:
-  task_name: spilo_repo
-  description : spilo_test
-  default : spilo
-  type: string
+   inputs:
+    task_name: 
+     description : spilo_test
+     default : spilo
+     type: string
   
   
 jobs:
 
  job1:
- runs on : ubuntu-latest
+ runs-on : ubuntu-latest
     steps:
       - name: task inside job1
         run: |
