@@ -3,7 +3,7 @@ on:
 
   workflow_dispatch:
    inputs:
-    task_name: 
+    username: 
      description : spilo_test
      default : "spilo"
      type: "string"
@@ -12,9 +12,10 @@ jobs:
 
  job1:
  runs-on : ubuntu-latest
+ steps: 
       - name: task inside job1
         run: |
-          echo The task_name is ${{ inputs.task_name }}
+          echo The usernamename is ${{ inputs.username }}
           
 job2:
  runs-on : ubuntu-latest
