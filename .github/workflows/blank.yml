@@ -16,5 +16,5 @@ jobs:
     steps:
       - name: task inside job1
         run: |
-          echo The task_username is ${{ inputs.task_name }}
+          echo The task_name is ${{ inputs.task_name }}
 
