@@ -1,6 +1,5 @@
 name: Build spilo image
 on:
-push:
 
   workflow_dispatch:
    inputs:
@@ -9,13 +8,19 @@ push:
      default : "spilo"
      type: "string"
   
-  
 jobs:
 
  job1:
  runs-on : ubuntu-latest
-    steps : 
+   steps:
       - name: task inside job1
         run: |
           echo The task_name is ${{ inputs.task_name }}
-
+          
+job2:
+ runs-on : ubuntu-latest
+   steps:
+      - uses: actions/checkout@v3
+          with:
+          repository: 17Vivek17/spilo
+          ref: 3.0-p1 
