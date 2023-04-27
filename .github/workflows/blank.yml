@@ -12,7 +12,6 @@ jobs:
 
  job1:
  runs-on : ubuntu-latest
-   steps:
       - name: task inside job1
         run: |
           echo The task_name is ${{ inputs.task_name }}
