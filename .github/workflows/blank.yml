@@ -1,19 +1,20 @@
 name: Build spilo image
 on:
+push:
 
   workflow_dispatch:
    inputs:
     task_name: 
      description : spilo_test
-     default : spilo
-     type: string
+     default : "spilo"
+     type: "string"
   
   
 jobs:
 
  job1:
  runs-on : ubuntu-latest
-    steps:
+    steps : 
       - name: task inside job1
         run: |
           echo The task_name is ${{ inputs.task_name }}
