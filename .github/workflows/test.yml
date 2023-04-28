@@ -1,29 +1,27 @@
 name: Build spilo image
+
 on:
  
- schedule:
+schedule:
 
  workflow_dispatch:
-   inputs:
-    taskname: 
-     description : spilo_test
-     default : "spilo"
-     type: "string"
-  
+   inputs :
+     version : 
+       description : spilo release
+       default : "3.0-p1"
+       type : "string"
+       
 jobs:
 
- job1:
-  runs-on : ubuntu-latest
-    steps: 
-      - name: task inside job1
+  job1:
+    runs-on : ubuntu-latest
+    steps:
+      - name: spilo release
         run: |
-          echo The taskname is ${{ inputs.taskname }}
-          
- job2:
-  runs-on : ubuntu-latest
-   steps:
-      - name: checkout
+          echo The version is ${{ inputs.version }}
+        
       - uses: actions/checkout@v3
-          with:
-          repository: 17Vivek17/spilo
-          ref: 3.0-p1 
+        name: spilo checkout
+        with:
+          repository: zalando/spilo
+          ref: ${{ inputs.version }}
