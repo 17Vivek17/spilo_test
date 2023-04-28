@@ -1,7 +1,9 @@
 name: Build spilo image
 on:
+ 
+ schedule:
 
-  workflow_dispatch:
+ workflow_dispatch:
    inputs:
     taskname: 
      description : spilo_test
@@ -11,14 +13,14 @@ on:
 jobs:
 
  job1:
- runs-on : ubuntu-latest
- steps: 
+  runs-on : ubuntu-latest
+    steps: 
       - name: task inside job1
         run: |
           echo The taskname is ${{ inputs.taskname }}
           
-job2:
- runs-on : ubuntu-latest
+ job2:
+  runs-on : ubuntu-latest
    steps:
       - name: checkout
       - uses: actions/checkout@v3
