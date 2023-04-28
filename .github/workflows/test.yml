@@ -1,15 +1,12 @@
 name: Build spilo image
 
 on:
- 
-schedule:
-
- workflow_dispatch:
-   inputs :
-     version : 
-       description : spilo release
-       default : "3.0-p1"
-       type : "string"
+  workflow_dispatch:
+    inputs :
+      version : 
+        description : spilo release
+        default : "3.0-p1"
+        type : "string"
        
 jobs:
 
