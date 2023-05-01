@@ -26,9 +26,8 @@ jobs:
       - name : build spilo docker image
         uses : docker/build-push-action@v4.0.0
         with :
-         context : zalando/spilo
+         context : zalando/spilo/postgres-appliance/Dockerfile
          build-args: |
             TIMESCALEDB_APACHE_ONLY="false"
-            PGVERSION="14" 
             PGOLDVERSIONS="13"
           
