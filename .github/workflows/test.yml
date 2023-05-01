@@ -24,7 +24,7 @@ jobs:
           ref: ${{ inputs.version }}
           
       - name : build spilo docker image
-        uses : docker/build-push-action@v2
+        uses : docker/build-push-action@v4.0.0
         with :
           build-args: |
             TIMESCALEDB_APACHE_ONLY="false"
