@@ -24,10 +24,6 @@ jobs:
           ref: ${{ inputs.version }}
           
       - name : build spilo docker image
-        uses : docker/build-push-action@v4.0.0
-        with :
-         file : extra/spilo/postgres-appliance
-         build-args: |
-            TIMESCALEDB_APACHE_ONLY="false"
-            PGOLDVERSIONS="13"
+        run: cd extra/spilo/postgres-appliance && docker build --build-arg TIMESCALEDB_APACHE_ONLY="false" --build-arg PGVERSION="14" --build-arg PGOLDVERSIONS="13"
+        
           
