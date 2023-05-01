@@ -24,7 +24,7 @@ jobs:
           ref: ${{ inputs.version }}
           
       - name : build spilo docker image
-        uses : docker/build-push-action@v4.0.0
+        uses : extra/build-push-action@v4.0.0
         with :
          file : zalando/spilo/postgres-appliance/
          build-args: |
