@@ -24,6 +24,10 @@ jobs:
           ref: ${{ inputs.version }}
           
       - name : build spilo docker image
-        run: cd extra/spilo/postgres-appliance && docker build --build-arg TIMESCALEDB_APACHE_ONLY="false" --build-arg PGVERSION="14" --build-arg PGOLDVERSIONS="13" -t
-        
-          
+        #uses : docker/build-push-action@v4.0.0
+        with :
+         file : zalando/spilo/postgres-appliance
+         run: docker build --build-arg TIMESCALEDB_APACHE_ONLY="false" --build-arg PGVERSION="14" --build-arg PGOLDVERSIONS="13" -t spilo .
+        # build-args: |
+        #    TIMESCALEDB_APACHE_ONLY="false"
+        #    PGOLDVERSIONS="13"
