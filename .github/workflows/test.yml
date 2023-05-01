@@ -24,5 +24,4 @@ jobs:
           ref: ${{ inputs.version }}
           
       - name : build spilo docker image
-        uses : docker/build-push-action@v2
-        run : --build-arg TIMESCALEDB_APACHE_ONLY="false" --build-arg PGOLDVERSIONS="13"
+        uses : docker/build-push-action@v2 --build-arg TIMESCALEDB_APACHE_ONLY="false" --build-arg PGOLDVERSIONS="13"
