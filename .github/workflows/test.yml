@@ -39,3 +39,7 @@ jobs:
           build-args: |
             TIMESCALEDB_APACHE_ONLY="false"
             PGOLDVERSIONS="13"
+            PGVERSION="14"
+          tags: spilo version:${{ inputs.version }}
+          push: false
+          
