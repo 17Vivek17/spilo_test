@@ -37,9 +37,9 @@ jobs:
         with :
           context : postgres-appliance
           build-args: |
-            TIMESCALEDB_APACHE_ONLY="false"
-            PGOLDVERSIONS="13"
-            PGVERSION="14"
+            TIMESCALEDB_APACHE_ONLY=false
+            PGOLDVERSIONS=13
+            PGVERSION=14
           tags: spilo:${{ inputs.version }}
           push: false
           
